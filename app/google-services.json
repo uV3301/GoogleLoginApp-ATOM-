@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "498641329021",
+    "project_id": "fir-auth01-ceb6a",
+    "storage_bucket": "fir-auth01-ceb6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498641329021:android:dddcd53100ff3dbde70a14",
+        "android_client_info": {
+          "package_name": "com.example.atomgooglesignin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498641329021-ipg45vp5hjeqs7k01ej0673rvg8gkbr9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.atomgooglesignin",
+            "certificate_hash": "e4fa182da3ce6743e6d30444fb2349c0c69b9888"
+          }
+        },
+        {
+          "client_id": "498641329021-a6cihbtal4nhl8v7m5bfj10g3p6cfh3n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCC4oJJwhKyxbL9a4BHLAutIvB12gWzOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498641329021-a6cihbtal4nhl8v7m5bfj10g3p6cfh3n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

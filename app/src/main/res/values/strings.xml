@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AtomGoogleSignIn</string>
+    <string name="welcome_text">Make meditation a habit you love</string>
+    <string name="google_signIn_bt_text">Continue with Google</string>
+    <string name="guest_bt_text">Continue as Guest</string>
+    <string name="terms">hello</string>
+    <string name="profilePictureDesc">ProfilePicture</string>
+    <string name="Intro_text">Hi, what do your friends call you?</string>
+    <string name="continue_bt_text">Continue</string>
+    <string name="dashboard_text">A more mindful you</string>
+    <string name="dashboard_subtext">building your meditation experience</string>
+    <string name="logout_text">Logout</string>
+    <string name="meditating_text">meditating body</string>
+</resources>
