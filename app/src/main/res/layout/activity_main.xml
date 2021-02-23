@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="30dp"
+        android:paddingTop="50dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="20dp"
@@ -78,6 +78,7 @@
             android:text="@string/terms"
 
             />
+
 
     </LinearLayout>
 

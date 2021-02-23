@@ -40,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     Button btSignIn;
-    private ProgressBar pgsBar;
+    Button btGuestIn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
         ));
 
         btSignIn = findViewById(R.id.google_signIn);
+        btGuestIn = findViewById(R.id.guest_signIn);
+
+
+
+        mAuth = FirebaseAuth.getInstance();
 
         // google sign in configs
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -66,12 +72,19 @@ public class MainActivity extends AppCompatActivity {
         btSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                displayToast("Please wait...");
                 Intent intent = mGoogleSignInClient.getSignInIntent();
                 startActivityForResult(intent, 100);
             }
         });
+        btGuestIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayToast("Please wait...");
+                signInAnonymously();
+            }
+        });
 
-        mAuth = FirebaseAuth.getInstance();
 
     }
 
@@ -115,7 +128,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayToast(String s) {
-        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+    }
+    private void signInAnonymously() {
+//        showProgressBar();
+        // [START signin_anonymously]
+        mAuth.signInAnonymously()
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInAnonymously:success");
+                            startActivity(new Intent(MainActivity.this, HomeScreen.class)
+                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                            displayToast("Guest sign in successful!");
+//                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInAnonymously:failure", task.getException());
+                            displayToast("Guest sign in failed!");
+//                            Toast.makeText(AnonymousAuthActivity.this, "Authentication failed.",
+//                                    Toast.LENGTH_SHORT).show();
+//                            updateUI(null);
+                        }
+
+                        // [START_EXCLUDE]
+//                        hideProgressBar();
+                        // [END_EXCLUDE]
+                    }
+                });
+        // [END signin_anonymously]
+    }
+
+    private void hideProgressBar() {
+    }
+
+    private void showProgressBar() {
     }
 
     private void firebaseAuthWithGoogle(String idToken) {

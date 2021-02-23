@@ -22,11 +22,11 @@
             android:layout_gravity="center">
 
             <ImageView
-
+                android:src="@drawable/guest_pic"
                 android:id="@+id/iv_image"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 android:contentDescription="@string/profilePictureDesc" />
 
         </androidx.cardview.widget.CardView>
